@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9F7E5">
+
+    <!-- Menu -->
+    <ImageView
+        android:id="@+id/btnMenu"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_menu_sort_by_size"
+        android:tint="#0E7A3E"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <!-- Mês -->
+    <TextView
+        android:id="@+id/tvMes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MÊS: ABRIL/2026"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textColor="#0E7A3E"
+        app:layout_constraintTop_toBottomOf="@id/btnMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Total -->
+    <TextView
+        android:id="@+id/tvTotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total gasto no mês:"
+        android:textColor="#0E7A3E"
+        app:layout_constraintTop_toBottomOf="@id/tvMes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp"/>
+
+    <TextView
+        android:id="@+id/tvTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 1.250,00"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        app:layout_constraintTop_toBottomOf="@id/tvTotalLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Card do gráfico -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardGrafico"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp"
+        app:cardBackgroundColor="#BFE8CF"
+        app:layout_constraintTop_toBottomOf="@id/tvTotal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Análise de Gastos"
+                android:textStyle="bold"
+                android:textColor="#0E7A3E"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 6.420,00"
+                android:textColor="#0E7A3E"
+                android:layout_marginBottom="12dp"/>
+
+            <!-- Gráfico -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Botão Ver Gastos -->
+
+    <!-- Botão Adicionar -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVerGastos"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#16A34A"
+        android:onClick="vergastos"
+        android:text="Ver Gastos"
+        android:textColor="@android:color/white"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardGrafico" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAdicionarGasto"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#16A34A"
+        android:onClick="addgastos"
+        android:text="Adicionar Gasto"
+        android:textColor="@android:color/white"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnVerGastos" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
